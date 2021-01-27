@@ -1,0 +1,23 @@
+{
+  "name": "HomeWork3",
+  "version": "1.0.0",
+  "description": "## Repository structure",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElijahCode/OTUS-Introduction-in-JS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElijahCode/OTUS-Introduction-in-JS/issues"
+  },
+  "homepage": "https://github.com/ElijahCode/OTUS-Introduction-in-JS#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
