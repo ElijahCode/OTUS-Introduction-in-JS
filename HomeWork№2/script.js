@@ -75,7 +75,4 @@ export function isCircleFitIntoASquare(SquareOfCircle, SquareOfSquare) {
 }
 console.log('Result for exersice #3');
 
-const SquareOfSquare = 50;
-const SquareOfCircle = 40;
-
-console.log(Math.sqrt(SquareOfSquare) >= 2 * Math.sqrt(SquareOfCircle/Math.PI));
+console.log(isCircleFitIntoASquare(30, 100));
