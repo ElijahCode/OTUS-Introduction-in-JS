@@ -1,69 +1,81 @@
 //#1
 
-const a = 15;
-const b = 21;
+export function getLargerNumber(numb1, numb2) {
+	if (numb1 > numb2) {
+		return numb1;
+	} else if (numb2 > numb1) {
+		return numb2;
+	} else {
+		return numb2;
+	}
+}
 
 console.log('Result for exersice #1');
+console.log(`What is larger 45 or 32? ${getLargerNumber(45, 32)}`);
 
-if (a > b) {
-	console.log(a);
-} else if (b > a) {
-	console.log(b);
-} else {
-	console.log(`a is equal b`);
-}
+
 
 //#2
+export function getNameOfMonth(number) {
+	
+	let result;
+	
+	switch (number) {
+		case '1':
+			result = "January";
+			break;
+		case '2':
+			result = "February";
+			break;
+		case '3':
+			result = "March";
+			break;
+		case '4':
+			result = "April";
+			break;
+		case '5':
+			result = "May";
+			break;
+		case '6':
+			result = "June";
+			break;
+		case '7':
+			result = "Jule";
+			break;
+		case '8':
+			result = "August";
+			break;
+		case '9':
+			result = "September";
+			break;
+		case '10':
+			result = "October";
+			break;
+		case '11':
+			result = "November";
+			break;
+		case '12':
+			result = "December";
+			break;
+		default:
+			result = "Wrong number";
+			break;
+	}
 
-const value = prompt('Enter a value range in 1 to 12');
-console.log('Result for exersice #2');
-
-switch (value) {
-	case '1':
-		console.log("January");
-		break;
-	case '2':
-		console.log("February");
-		break;
-	case '3':
-		console.log("March");
-		break;
-	case '4':
-		console.log("April");
-		break;
-	case '5':
-		console.log("May");
-		break;
-	case '6':
-		console.log("June");
-		break;
-	case '7':
-		console.log("Jule");
-		break;
-	case '8':
-		console.log("August");
-		break;
-	case '9':
-		console.log("September");
-		break;
-	case '10':
-		console.log("October");
-		break;
-	case '11':
-		console.log("November");
-		break;
-	case '12':
-		console.log("December");
-		break;
-	default:
-		console.log("Wrong number");
-		break;
+	return result;
 }
 
+console.log('Result for exersice #2');
+console.log(getNameOfMonth(prompt('Enter a value range in 1 to 12')));
+
+
 //#3
+export function isCircleFitIntoASquare(SquareOfCircle, SquareOfSquare) {
+	return  2 * Math.sqrt(SquareOfCircle/Math.PI) <= Math.sqrt(SquareOfSquare);
+}
 console.log('Result for exersice #3');
 
-SquareOfSquare = 50;
-SquareOfCircle = 40;
+const SquareOfSquare = 50;
+const SquareOfCircle = 40;
 
 console.log(Math.sqrt(SquareOfSquare) >= 2 * Math.sqrt(SquareOfCircle/Math.PI));
