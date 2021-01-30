@@ -6,6 +6,7 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
+    'prettier'
   ],
   parserOptions: {
     ecmaVersion: 12,
@@ -15,5 +16,6 @@ module.exports = {
     "jest"
   ],
   rules: {
+    "max-len": ["error", { ignoreComments: true }],
   },
 };
