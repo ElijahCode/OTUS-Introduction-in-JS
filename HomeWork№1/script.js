@@ -23,10 +23,8 @@ const string1 = "Hello";
 const string2 = "World";
 
 console.log(
-  `The amount of characters for string's "Hello" and "World" is ${getSumOfStringsLengths(
-    string1,
-    string2
-  )}`
+  `The amount of characters for string's "Hello" and "World" is 
+  ${getSumOfStringsLengths(string1, string2)}`
 );
 
 // exercise #3

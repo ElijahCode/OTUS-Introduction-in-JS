@@ -1,24 +1,23 @@
-//exercise #1
+// exercise #1
 
-function whatIsIt (str) {
+function whatIsIt(str) {
+  const dateRegEx = /d{2}\.d{2}\.d{4}/;
+  const emailRegEx = /\w*\.?-?\w*@{1}\w+\.\w*/;
+  const numbPhoneRegEx = /\+?\d{11}|\+?\d{1}-?\(?\d{3}-?\)?\d{3}-?\d{2}-?\d{2}/;
 
-    const dateRegExp = /\d{2}\.\d{2}\.\d{4}/;
-    const emailRegExp = /\w*\.?\-?\w*\@{1}\w+\.\w*/;
-    const numberOfPhoneRegExp = /\+?\d{11}|\+?\d{1}\-?\(?\d{3}\-?\)?\d{3}\-?\d{2}\-?\d{2}/;
+  if (dateRegEx.test(str)) {
+    console.log("You enter a date");
+  }
 
-    if (dateRegExp.test(str)) {
-        console.log("You enter a date");
-    } 
-    
-    if (emailRegExp.test(str)) {
-        console.log(`You enter a email adress`);
-    }
+  if (emailRegEx.test(str)) {
+    console.log(`You enter a email adress`);
+  }
 
-    if (numberOfPhoneRegExp.test(str)) {
-        console.log(`You enter a phone number`);
-    }
+  if (numbPhoneRegEx.test(str)) {
+    console.log(`You enter a phone number`);
+  }
 
-    return null;
+  return null;
 }
 
 whatIsIt(prompt(`Enter date, email or phone number`));
