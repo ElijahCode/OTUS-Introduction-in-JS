@@ -1,55 +1,71 @@
-const date = new Date();
-
-const numberDayOfWeek = date.getDay();
-
 // exercise #1
-const getDayOfWeek = (number) => {
-  const value = number;
+export function getDayOfWeek(input) {
+  const inputToDate = new Date(input.split(".").reverse().join("-"));
+  let numberDayOfWeek;
 
-  switch (value) {
+  try {
+    numberDayOfWeek = inputToDate.getDay();
+  } catch (err) {
+    numberDayOfWeek = 7;
+  }
+
+  let result;
+
+  switch (numberDayOfWeek) {
     case 0:
-      console.log("Sunday");
+      result = "Sunday";
       break;
     case 1:
-      console.log("Monday");
+      result = "Monday";
       break;
     case 2:
-      console.log("Tuesday");
+      result = "Tuesday";
       break;
     case 3:
-      console.log("Wednesday");
+      result = "Wednesday";
       break;
     case 4:
-      console.log("Thursday");
+      result = "Thursday";
       break;
     case 5:
-      console.log("Friday");
+      result = "Friday";
       break;
     case 6:
-      console.log("Saturday");
+      result = "Saturday";
       break;
     default:
-      console.log("Wrong number");
+      result = "Wrong date";
       break;
   }
-};
+
+  return result;
+}
+
+console.log(getDayOfWeek("31.01.2021"));
 
 // exercise #2
 
-const toDayDate = new Date("2020-12-27");
-console.log(date.getHours() * 60 - toDayDate.getHours() * 60);
+export function getNumberOfMinutes() {
+  const toDayDate = new Date();
+  return toDayDate.getHours() * 60 + toDayDate.getMinutes();
+}
+
+console.log(getNumberOfMinutes());
 
 // exercise #3
-const defineMoreYangerPerson = (value1, value2) => {
+export function defineMoreYangerPerson(value1, value2) {
+  let result;
+
   if (value1 - value2 > 0) {
-    console.log("First person is more younger");
+    result = "First person is more younger";
   } else {
-    console.log("Second person is more younger");
+    result = "Second person is more younger";
   }
-};
+
+  return result;
+}
 
 const firstDateOfBirth = new Date("1996-06-11");
 const secondDateOfBirth = new Date("1997-12-04");
 
-getDayOfWeek(numberDayOfWeek);
-defineMoreYangerPerson(firstDateOfBirth, secondDateOfBirth);
+console.log(defineMoreYangerPerson(firstDateOfBirth, secondDateOfBirth));
