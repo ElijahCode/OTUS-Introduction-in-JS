@@ -1,35 +1,35 @@
-function createButton(elem) {
+export function createButton(elem, buttonClass) {
   const button = document.createElement("button");
 
-  button.innerHTML = `<button class = "button" onclick = 'buttonClick()'>
+  button.innerHTML = `<button class = ${buttonClass} onclick = 'buttonClick()'>
     Click!
   </button>`;
 
   elem.append(button);
 }
 
-function createInput(elem) {
+export function createInput(elem, createElemId) {
   const input = document.createElement("input");
 
   input.type = "text";
-  input.id = "textbox";
+  input.id = createElemId;
 
   elem.append(input);
 }
 
-function createMain(elem) {
+export function createMain(elem) {
   const main = document.createElement("main");
   main.id = "main";
 
   elem.append(main);
 }
 
-function getInputText() {
-  const text = document.getElementById("textbox").value;
+export function getInputText(elemId) {
+  const text = document.getElementById(elemId).value;
   return text;
 }
 
-function addParagraph(data) {
+export function addParagraph(data) {
   const paragraphElem = document.createElement("p");
   paragraphElem.innerText = data;
   const main = document.getElementById("main");
@@ -41,7 +41,7 @@ function addParagraph(data) {
 }
 
 export function buttonClick() {
-  const inputText = getInputText();
+  const inputText = getInputText("textbox");
 
   addParagraph(inputText);
 }
@@ -50,20 +50,21 @@ createMain(document.querySelector("body"));
 addParagraph("Test text");
 addParagraph("Test text");
 addParagraph("Test text");
-createInput(document.querySelector("body"));
-createButton(document.querySelector("body"));
+createInput(document.querySelector("body"), "textbox");
+createButton(document.querySelector("body"), "button");
 
 const button = document.querySelector(".button");
 
-function hideButton() {
+export function hideButton(spyElemId, spyButton) {
   setInterval(() => {
-    const text = document.getElementById("textbox").value;
+    const text = document.getElementById(spyElemId).value;
+    const hiddenButton = spyButton;
     if (text === "") {
-      button.hidden = true;
+      hiddenButton.hidden = true;
     } else {
-      button.hidden = false;
+      hiddenButton.hidden = false;
     }
   }, 10);
 }
 
-hideButton();
+hideButton("textbox", button);
