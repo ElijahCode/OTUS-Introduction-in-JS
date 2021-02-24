@@ -2,19 +2,15 @@
 
 export function getLargerNumber(numb1, numb2) {
   if (numb1 > numb2) {
-    return numb1;
+    return console.log(numb1);
   }
-  if (numb2 > numb1) {
-    return numb2;
-  }
-  return numb2;
+  return console.log(numb2);
 }
 
-console.log("Result for exersice #1");
-console.log(`What is larger 45 or 32? ${getLargerNumber(45, 32)}`);
-
 // #2
-export function getNameOfMonth(number) {
+export function getNameOfMonth() {
+  const number = prompt("Enter a number");
+
   let result;
 
   switch (number) {
@@ -59,16 +55,12 @@ export function getNameOfMonth(number) {
       break;
   }
 
-  return result;
+  return console.log(result);
 }
-
-console.log("Result for exersice #2");
-console.log(getNameOfMonth(prompt("Enter a value range in 1 to 12")));
 
 // #3
 export function isCircleFitIntoASquare(SquareOfCircle, SquareOfSquare) {
-  return 2 * Math.sqrt(SquareOfCircle / Math.PI) <= Math.sqrt(SquareOfSquare);
+  return console.log(
+    2 * Math.sqrt(SquareOfCircle / Math.PI) <= Math.sqrt(SquareOfSquare)
+  );
 }
-console.log("Result for exersice #3");
-
-console.log(isCircleFitIntoASquare(30, 100));

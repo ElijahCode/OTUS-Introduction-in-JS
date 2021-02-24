@@ -3,41 +3,34 @@
 export function getSumOfNumbers(firstNumb, lastNumb) {
   let sum = 0;
 
-  for (let i = firstNumb; i < lastNumb + 1; i += 1) {
+  for (let i = firstNumb; i <= lastNumb; i += 1) {
     sum += i;
   }
 
-  return sum;
+  return console.log(sum);
 }
 
-console.log("Result for exercise #1");
-console.log(getSumOfNumbers(50, 100));
-console.log("");
-
 // exercise #2
-
-console.log("Result for exercise #2");
 
 export function getTableOfMultiplication(number, sizeOfTable) {
   const result = [];
 
-  for (let i = 1; i < sizeOfTable + 1; i += 1) {
+  for (let i = 1; i <= sizeOfTable; i += 1) {
     result.push(number * i);
   }
 
-  return result;
+  return console.log(result);
 }
-
-console.log(getTableOfMultiplication(7, 10));
-console.log("");
 
 // exercise #3
 
-export function getSumOfOddNumbers(number) {
+export function getSumOfOddNumbers() {
+  const number = prompt("Enter a number");
+
   let result = 0;
   let counter = 0;
 
-  for (let i = 1; i < number + 1; i += 1) {
+  for (let i = 1; i <= number; i += 1) {
     if (i % 2 > 0) {
       result += i;
       counter += 1;
@@ -46,9 +39,5 @@ export function getSumOfOddNumbers(number) {
 
   result /= counter;
 
-  return result;
+  return console.log(result);
 }
-
-console.log("Result for exercise #3");
-console.log(getSumOfOddNumbers(10));
-console.log("");

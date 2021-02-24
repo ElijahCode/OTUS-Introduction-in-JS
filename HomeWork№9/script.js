@@ -8,16 +8,6 @@ export function isRightTriangle(a, b, c) {
   return check1 || check2 || check3;
 }
 
-console.log("Result for exercise #1");
-console.log(
-  `isRightTriangle(3, 4, 5) = ${isRightTriangle(
-    3,
-    4,
-    5
-  )}, isRightTriangle(6, 7, 8) = ${isRightTriangle(6, 7, 8)} `
-);
-console.log("");
-
 // exercise #2
 
 export function calculateCircle(R) {
@@ -27,26 +17,16 @@ export function calculateCircle(R) {
   return [S, l];
 }
 
-console.log("Result for exercise #2:");
-const data = calculateCircle(prompt(`Enter a radius of circle:`, "2"));
-console.log(
-  `Square of circle: ${data[0].toFixed(
-    3
-  )}, circumference of circle : ${data[1].toFixed(3)}`
-);
-console.log("");
-
 // exercise #3
 
 export function findRoots(str) {
   let a;
   let b;
   let c;
-  const defaultStr = "5 15 4";
   try {
     [a, b, c] = str.split(" ");
   } catch (err) {
-    [a, b, c] = defaultStr.split(" ");
+    throw new Error("Wrong input data");
   }
 
   const D = b * b - 4 * a * c;
@@ -76,9 +56,3 @@ export function findRoots(str) {
 
   return result;
 }
-
-console.log("Result for exercise #3:");
-console.log(
-  findRoots(prompt("Enter coefficients a b c separated by a space:", "5 15 4"))
-);
-console.log("");

@@ -1,10 +1,13 @@
 import { getSumOfArray, getChangedArray, findMinAndMaxValue } from "./script";
 
 describe("Test for exercise #1", () => {
+  console.log = jest.fn();
+
   const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   it("Return 45 for argument numbers", () => {
-    expect(getSumOfArray(numbers)).toBe(45);
+    getSumOfArray(numbers);
+    expect(console.log).toHaveBeenCalledWith(45);
   });
 });
 
@@ -20,9 +23,12 @@ describe("Test for exercise #2", () => {
 });
 
 describe("Test for exercise #3", () => {
+  console.log = jest.fn();
+
   const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   it("Return [0, 9] for numbers", () => {
-    expect(findMinAndMaxValue(numbers)).toEqual([0, 9]);
+    findMinAndMaxValue(numbers);
+    expect(console.log).toHaveBeenCalledWith(0, 9);
   });
 });

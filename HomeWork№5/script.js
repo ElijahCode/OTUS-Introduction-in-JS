@@ -1,7 +1,5 @@
 // exercise #1
 
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-
 export function getSumOfArray(someArray) {
   let sum = 0;
 
@@ -9,22 +7,14 @@ export function getSumOfArray(someArray) {
     sum += someArray[i];
   }
 
-  return sum;
+  return console.log(sum);
 }
-
-console.log("Result for exercise #1:");
-console.log(getSumOfArray(numbers));
-console.log("");
 
 // exercise #2
 
 export function getChangedArray(array, changeFun) {
   return Object.assign(array).map(changeFun);
 }
-
-console.log("Result for exercise #2:");
-console.log(getChangedArray(numbers, (elem) => elem * 2));
-console.log("");
 
 // exercise #3
 
@@ -42,11 +32,5 @@ export function findMinAndMaxValue(array) {
     }
   }
 
-  return [minElem, maxElem];
+  return console.log(minElem, maxElem);
 }
-
-const [minElem, maxElem] = findMinAndMaxValue(numbers);
-
-console.log("Result for exercise #3:");
-console.log(`maxElem = ${maxElem}, minElem = ${minElem}`);
-console.log("");

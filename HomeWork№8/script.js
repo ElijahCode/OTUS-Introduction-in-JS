@@ -41,16 +41,12 @@ export function getDayOfWeek(input) {
   return result;
 }
 
-console.log(getDayOfWeek("31.01.2021"));
-
 // exercise #2
 
 export function getNumberOfMinutes() {
   const toDayDate = new Date();
   return toDayDate.getHours() * 60 + toDayDate.getMinutes();
 }
-
-console.log(getNumberOfMinutes());
 
 // exercise #3
 export function defineMoreYangerPerson(value1, value2) {
@@ -64,8 +60,3 @@ export function defineMoreYangerPerson(value1, value2) {
 
   return result;
 }
-
-const firstDateOfBirth = new Date("1996-06-11");
-const secondDateOfBirth = new Date("1997-12-04");
-
-console.log(defineMoreYangerPerson(firstDateOfBirth, secondDateOfBirth));

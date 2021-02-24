@@ -16,6 +16,9 @@ describe("Test for exercise #2", () => {
   it("Return false for argument Bipolar transistor", () => {
     expect(isWord("Bipolar Transistor")).toBeFalsy();
   });
+  it("Return false for argument Bipolar,transistor", () => {
+    expect(isWord("Bipolar,Transistor")).toBeFalsy();
+  });
 });
 
 describe("Test for exercise #3", () => {

@@ -8,6 +8,8 @@ import {
   hideButton,
 } from "./script";
 
+const testingModule = require("./script");
+
 describe("Testing drawning of page", () => {
   const body = document.querySelector("body");
 
@@ -64,9 +66,21 @@ describe("Testing drawning of page", () => {
     expect(thdValOfLength).toBeLessThan(6);
   });
 
-  hideButton("textbox", button);
+  hideButton();
 
   it("Check that button is not hide", () => {
     expect(button.hidden).toBeFalsy();
+  });
+});
+
+describe("Test event listeners", () => {
+  const button = document.querySelector(".button");
+
+  const spyButtonClick = jest.spyOn(testingModule, `buttonClick`);
+  button.addEventListener("click", spyButtonClick);
+
+  it("button.click() -> buttonClick", () => {
+    button.click();
+    expect(spyButtonClick).toHaveBeenCalled();
   });
 });

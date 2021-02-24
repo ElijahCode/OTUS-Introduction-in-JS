@@ -1,8 +1,11 @@
 import { addAge, getCopyAndAddRole, getProperties } from "./script";
 
 describe("Test for exercise #1", () => {
+  window.prompt = jest.fn();
+  window.prompt.mockReturnValueOnce(20);
+
   let someUser = { name: "John" };
-  someUser = addAge(someUser, 20);
+  someUser = addAge(someUser);
 
   it("someUser is qual object: {name: Jonh, age: 20}", () => {
     expect(someUser).toEqual({ name: "John", age: 20 });
@@ -20,7 +23,7 @@ describe("Test for exercise #2", () => {
 
 describe("Test for exercise #3", () => {
   const admin = { name: "John", age: 20, role: "admin" };
-  const [name, age, role] = getProperties(admin);
+  const { name, age, role } = getProperties(admin);
 
   it("name is equal admin.name", () => {
     expect(name).toBe(admin.name);
