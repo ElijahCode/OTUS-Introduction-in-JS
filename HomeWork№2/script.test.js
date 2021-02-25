@@ -5,10 +5,9 @@ import {
   isCircleFitIntoASquare,
 } from "./script";
 
+jest.spyOn(console, "log");
+
 describe("Tests for exercise #1", () => {
-  beforeEach(() => {
-    console.log = jest.fn();
-  });
   it("getLargerNumber(25, 50) -> 50", () => {
     getLargerNumber(25, 50);
     expect(console.log).toHaveBeenCalledWith(50);
@@ -40,7 +39,6 @@ describe.each`
   ${"13"} | ${"Wrong number"}
 `("getNameOfMonth($arg) -> $result", ({ arg, result }) => {
   beforeEach(() => {
-    console.log = jest.fn();
     window.prompt = jest.fn();
   });
 
@@ -52,9 +50,6 @@ describe.each`
 });
 
 describe("Tests for exercise #3", () => {
-  beforeEach(() => {
-    console.log = jest.fn();
-  });
   it("Return false", () => {
     isCircleFitIntoASquare(12, 16);
     expect(console.log).toHaveBeenCalledWith(true);

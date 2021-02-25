@@ -4,10 +4,9 @@ import {
   getSumOfDigitForNumber,
 } from "./script";
 
+jest.spyOn(console, "log");
+
 describe("Test for exercise #1", () => {
-  beforeEach(() => {
-    console.log = jest.fn();
-  });
   it("Returns [15, 50] for arguments (5, 10) ", () => {
     getSumAndMultiplication(5, 10);
     expect(console.log).toHaveBeenCalledWith(15, 50);
@@ -27,9 +26,6 @@ describe("Test for exercise #1", () => {
 });
 
 describe("Test for exercise #2", () => {
-  beforeEach(() => {
-    console.log = jest.fn();
-  });
   it('Returns 6 for arguments ("Hi", "Bob!") ', () => {
     getSumOfStringsLengths("Hi", "Bob!");
     expect(console.log).toHaveBeenCalledWith(6);
@@ -46,7 +42,6 @@ describe("Test for exercise #2", () => {
 
 describe("Test for exercise #3", () => {
   beforeEach(() => {
-    console.log = jest.fn();
     window.prompt = jest.fn();
   });
   it("Returns 9 for argument 333 ", () => {

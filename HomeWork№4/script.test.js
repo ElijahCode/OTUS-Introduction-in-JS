@@ -1,7 +1,7 @@
 import { addAge, getCopyAndAddRole, getProperties } from "./script";
 
 describe("Test for exercise #1", () => {
-  window.prompt = jest.fn();
+  jest.spyOn(console, "log");
   window.prompt.mockReturnValueOnce(20);
 
   let someUser = { name: "John" };
