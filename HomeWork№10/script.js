@@ -1,24 +1,21 @@
-//exercise #1
+// exercise #1
 
-function whatIsIt (str) {
+export function whatIsIt(str) {
+  const dateRegEx = /\d{1,2}\.\d{1,2}\.\d{1,4}/;
+  const emailRegEx = /\w*\.?-?\w*@{1}\w+\.\w{1,}/;
+  const numbRegEx = /\+?\d{11}|\+?\d{1}-?\(?\d{3}-?\)?\d{3}-?\d{2}-?\d{2}/;
 
-    const dateRegExp = /\d{2}\.\d{2}\.\d{4}/;
-    const emailRegExp = /\w*\.?\-?\w*\@{1}\w+\.\w*/;
-    const numberOfPhoneRegExp = /\+?\d{11}|\+?\d{1}\-?\(?\d{3}\-?\)?\d{3}\-?\d{2}\-?\d{2}/;
+  let result;
 
-    if (dateRegExp.test(str)) {
-        console.log("You enter a date");
-    } 
-    
-    if (emailRegExp.test(str)) {
-        console.log(`You enter a email adress`);
-    }
+  if (dateRegEx.test(str)) {
+    result = "You enter a date";
+  } else if (emailRegEx.test(str)) {
+    result = `You enter a email adress`;
+  } else if (numbRegEx.test(str)) {
+    result = `You enter a phone number`;
+  } else {
+    result = "Can't define type of data";
+  }
 
-    if (numberOfPhoneRegExp.test(str)) {
-        console.log(`You enter a phone number`);
-    }
-
-    return null;
+  return result;
 }
-
-whatIsIt(prompt(`Enter date, email or phone number`));

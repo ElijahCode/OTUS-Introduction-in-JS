@@ -1,57 +1,62 @@
-const date = new Date();
+// exercise #1
+export function getDayOfWeek(input) {
+  const inputToDate = new Date(input.split(".").reverse().join("-"));
+  let numberDayOfWeek;
 
-const numberDayOfWeek = date.getDay();
+  try {
+    numberDayOfWeek = inputToDate.getDay();
+  } catch (err) {
+    numberDayOfWeek = 7;
+  }
 
-//exercise #1
-const getDayOfWeek = (number) => {
-  const value = number;
+  let result;
 
-  switch (value) {
+  switch (numberDayOfWeek) {
     case 0:
-      console.log("Sunday");
+      result = "Sunday";
       break;
-     case 1:
-      console.log("Monday");
+    case 1:
+      result = "Monday";
       break;
-     case 2:
-      console.log("Tuesday");
+    case 2:
+      result = "Tuesday";
       break;
-     case 3:
-      console.log("Wednesday");
+    case 3:
+      result = "Wednesday";
       break;
-     case 4:
-      console.log("Thursday");
+    case 4:
+      result = "Thursday";
       break;
-     case 5:
-      console.log("Friday");
+    case 5:
+      result = "Friday";
       break;
-     case 6:
-      console.log("Saturday");
+    case 6:
+      result = "Saturday";
       break;
     default:
-      console.log("Wrong number");
+      result = "Wrong date";
       break;
   }
+
+  return result;
 }
 
-//exercise #2
-console.log(date.getHours()*60 - toDayDate.getHours()*60);
+// exercise #2
 
-//exercise #3
-const defineMoreYangerPerson = (value1, value2) => {
-    if(value1 - value2 > 0) {
-        console.log('First person is more younger');
-    } else {
-        console.log('Second person is more younger');
-    }
-} 
+export function getNumberOfMinutes() {
+  const toDayDate = new Date();
+  return toDayDate.getHours() * 60 + toDayDate.getMinutes();
+}
 
-const toDayDate = new Date('2020-12-27');
+// exercise #3
+export function defineMoreYangerPerson(value1, value2) {
+  let result;
 
-const firstDateOfBirth = new Date('1996-06-11');
-const secondDateOfBirth = new Date('1997-12-04');
+  if (value1 - value2 > 0) {
+    result = "First person is more younger";
+  } else {
+    result = "Second person is more younger";
+  }
 
-
-
-getDayOfWeek(numberDayOfWeek);
-defineMoreYangerPerson(firstDateOfBirth, secondDateOfBirth);
+  return result;
+}

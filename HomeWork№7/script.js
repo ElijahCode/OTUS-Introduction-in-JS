@@ -1,39 +1,68 @@
-const button = document.querySelector('.button');
+export function addParagraph(data) {
+  const paragraphElem = document.createElement("p");
+  paragraphElem.innerText = data;
+  const main = document.getElementById("main");
+  main.append(paragraphElem);
 
-//exercise #1
-function buttonClick () {
-    const inputText = getInputText();
-    addParagraph(inputText);
+  if (main.getElementsByTagName("p").length > 5) {
+    main.removeChild(main.getElementsByTagName("p").item(0));
+  }
 }
 
-function hideButton() {
-    const text = document.querySelector('.textbox');
-    const id = setInterval(() => {
-        if (text.value == '') {
-            button.hidden = true;
-        } else {
-            button.hidden = false;
-        }
-    }, 10);
+export function getInputText(elemId) {
+  const text = document.getElementById(elemId).value;
+  return text;
 }
 
-//exercise #2
-function getInputText () {
-    const text = document.querySelector('.textbox');
-    return text.value;
+export function buttonClick() {
+  const inputText = getInputText("textbox");
+  addParagraph(inputText);
 }
 
-function addParagraph (data) {
-    const paragraphElem = document.createElement('p');
-    paragraphElem.innerText = data;
-    const main = document.querySelector('.main');
-    main.append(paragraphElem);
+export function createButton(elem, buttonClass) {
+  const button = document.createElement("button");
 
-    //exercise #3
-    if(main.getElementsByTagName('p').length > 5) {
-        console.log(main.getElementsByTagName('p').item(0));
-        main.removeChild(main.getElementsByTagName('p').item(0));
-    }
+  button.innerHTML = `<button class = ${buttonClass}>
+    Click!
+  </button>`;
+
+  button.addEventListener("click", buttonClick);
+
+  elem.append(button);
 }
 
-hideButton()
+export function hideButton() {
+  const text = document.getElementById("textbox").value;
+  const button = document.querySelector(".button");
+  if (text === "") {
+    button.hidden = true;
+  } else {
+    button.hidden = false;
+  }
+}
+
+export function createInput(elem, createElemId) {
+  const input = document.createElement("input");
+
+  input.type = "text";
+  input.id = createElemId;
+  input.addEventListener("change", hideButton);
+
+  elem.append(input);
+}
+
+export function createMain(elem) {
+  const main = document.createElement("main");
+  main.id = "main";
+
+  elem.append(main);
+}
+
+createMain(document.querySelector("body"));
+
+for (let i = 0; i < 3; i += 1) {
+  addParagraph("Test text");
+}
+
+createInput(document.querySelector("body"), "textbox");
+createButton(document.querySelector("body"), "button");
